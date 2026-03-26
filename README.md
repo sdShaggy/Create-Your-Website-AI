@@ -3,7 +3,7 @@
  Prototype V 0.1
 
  
- Generate stunning, production-ready websites using AI — from just a simple prompt.
+ Generate stunning, production-ready websites using AI - from just a simple prompt.
 
 ---
 

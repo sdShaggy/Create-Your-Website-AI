@@ -76,6 +76,54 @@ Deployment (Render)
 
 ---
 
+## 🔌 2. API Endpoint Documentation
+
+### 🔹 Base URL
+```
+https:///create-your-website-ai.onrender.com
+```
+
+---
+
+### 🔹 Generate Website
+
+**POST /generate**
+
+#### Request
+```json
+{
+  "prompt": "Create a modern portfolio website",
+  "style": "modern",
+  "pages": 2
+}
+```
+
+#### Response
+```json
+{
+  "status": "success",
+  "files": {
+    "index.html": "<html>...</html>",
+    "style.css": "body {...}",
+    "script.js": "// JS code"
+  }
+}
+```
+
+---
+
+### 🔹 Health Check
+
+**GET /health**
+
+```json
+{
+  "status": "ok"
+}
+```
+
+---
+
 ## 🤖 3. Model Selection & Integration Rationale
 
 ### 🔹 Why LLMs?
@@ -85,12 +133,101 @@ Deployment (Render)
 
 ---
 
+### 🔹 Selection Criteria
+
+| Criteria | Description |
+|---------|------------|
+| Accuracy | Valid code generation |
+| Speed | Fast API response |
+| Cost | Efficient usage |
+| Flexibility | Multiple styles |
+
+---
 
 ### 🔹 Integration Flow
 
 ```
 User Input → FastAPI → LLM API → Generated Code → Response
 ```
+
+---
+
+### 🔹 Prompt Strategy
+- Structured prompts for layout + style
+- Ensures clean HTML/CSS separation
+
+---
+
+## 🚀 4. Deployment & Setup Instructions (Render)
+
+### 🔹 Prerequisites
+- GitHub repository
+- Render account
+- API key
+
+---
+
+### 🔹 Step 1: Clone Repository
+```bash
+git clone https://github.com/sdShaggy/Create-Your-Website-AI.git
+cd Create-Your-Website-AI
+```
+
+---
+
+### 🔹 Step 2: Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 🔹 Step 3: Environment Variables
+
+Create `.env`:
+```
+HF_TOKEN=your_HF_TOKEN
+```
+
+---
+
+### 🔹 Step 4: Run Locally
+```bash
+uvicorn main:app --reload
+```
+
+---
+
+### 🔹 Step 5: Deploy on Render
+
+Configuration:
+
+| Setting | Value |
+|--------|------|
+| Build Command | pip install -r requirements.txt |
+| Start Command | uvicorn main:app --host 0.0.0.0 --port 10000 |
+
+---
+
+### 🔹 Step 6: Test API
+
+```bash
+curl -X POST https:///create-your-website-ai.onrender.com/generate -H "Content-Type: application/json" -d '{"prompt":"Create a business website"}'
+```
+
+---
+
+## 📂 5. Project Structure 
+
+```
+├── main.py
+├── requirements.txt
+├── .env
+├── templates/
+└── README.md
+```
+
+---
 
 ---
 

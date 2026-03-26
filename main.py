@@ -7,6 +7,7 @@ import ssl
 import certifi
 import time
 import requests
+import uvicorn
 
 SYSTEM_PROMPT = """
 You are an elite senior frontend engineer and UI/UX designer at a top-tier product company.
@@ -94,6 +95,8 @@ class GenerateRequest(BaseModel):
 
 # Serve frontend
 @app.get("/")
+def root():
+    return {"Message: API is Working"}
 async def serve_home():
     return FileResponse("templates/index.html")
 
@@ -145,3 +148,8 @@ async def generate_website(req: GenerateRequest):
             "html": f"<h1>Error</h1><p>{str(e)}</p>",
             "tokens_used": 0
         }
+    
+port = int(os.environ.get("PORT", 10000))
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=port)

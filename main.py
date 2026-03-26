@@ -95,8 +95,6 @@ class GenerateRequest(BaseModel):
 
 # Serve frontend
 @app.get("/")
-def root():
-    return {"Message: API is Working"}
 async def serve_home():
     return FileResponse("templates/index.html")
 

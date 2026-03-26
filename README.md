@@ -25,7 +25,9 @@ User (Frontend UI)
         ↓
 FastAPI Backend (API Layer)
         ↓
-AI Model (LLM / Prompt Engine)
+Hugging Face Inference API
+        ↓
+Qwen Model Response 
         ↓
 Website Generator Engine
         ↓
@@ -147,7 +149,7 @@ https:///create-your-website-ai.onrender.com
 ### 🔹 Integration Flow
 
 ```
-User Input → FastAPI → LLM API → Generated Code → Response
+User Input → FastAPI → LLM API (HuggingFace) → Generated Code → Response
 ```
 
 ---
@@ -186,7 +188,7 @@ pip install -r requirements.txt
 
 Create `.env`:
 ```
-HF_TOKEN=your_HF_TOKEN
+HF_TOKEN= <your_HF_TOKEN>
 ```
 
 ---
@@ -245,7 +247,7 @@ curl -X POST https:///create-your-website-ai.onrender.com/generate -H "Content-T
 
 - FastAPI
 - LLM APIs (Qwen2.5-coder-7B-Instruct)
-- HuggingFace
+- AI model Hosting : HuggingFace
 - HTML/CSS/JS
 - Render
 - MongoDB

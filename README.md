@@ -226,7 +226,7 @@ curl -X POST https:///create-your-website-ai.onrender.com/generate -H "Content-T
 ├── requirements.txt
 ├── .env
 ├── templates/
-└── README.md
+       └── README.md
 ```
 
 ---
@@ -251,7 +251,6 @@ curl -X POST https:///create-your-website-ai.onrender.com/generate -H "Content-T
 - HTML/CSS/JS
 - Render
 - MongoDB
-- HTML + CSS + JS
 
 ---
 

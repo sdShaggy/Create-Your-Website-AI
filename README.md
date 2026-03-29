@@ -45,6 +45,7 @@ Deployment (Render)
 - Accepts user prompts
 - Sends API requests
 - Displays generated website
+   - ``` Frontend Vibe Coded using Claude Sonnet 4.6 ```
 
 ---
 
